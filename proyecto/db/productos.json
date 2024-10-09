@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "img": "https://via.placeholder.com/150",
+      "nombre": "Granola Orgánica",
+      "precio": 450,
+      "descripcion": "Mezcla de avena, frutos secos y miel natural.",
+      "categoria": "Desayuno"
+    },
+    {
+      "id": 2,
+      "img": "https://via.placeholder.com/150",
+      "nombre": "Pan Integral",
+      "precio": 120,
+      "descripcion": "Hecho con harina de trigo integral 100%.",
+      "categoria": "Panadería"
+    },
+    {
+      "id": 3,
+      "img": "https://via.placeholder.com/150",
+      "nombre": "Leche Almendras",
+      "precio": 250,
+      "descripcion": "Bebida vegetal a base de almendras orgánicas.",
+      "categoria": "Bebidas"
+    }
+  ]
+  
