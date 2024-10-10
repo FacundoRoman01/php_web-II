@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
 <header>
     <nav>
         <a href="index.php" class="logo">
-            <p>Logo</p>
+            <p>Nutri<spanc class="color_orange">Foods</spanc>  </p>
         </a>
         <ul>
             <li><a href="index.php">Inicio</a></li>
