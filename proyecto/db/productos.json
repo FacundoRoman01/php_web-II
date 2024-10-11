@@ -46,6 +46,57 @@
         "precio": 200,
         "descripcion": "Avena sin procesar, ideal para desayunos.",
         "categoria": "Cereales"
+    },
+    {
+      "id": 7,
+      "img": "assets/img/leche_almendra.png",
+      "nombre": "Granola Orgánica",
+      "precio": 450,
+      "descripcion": "Mezcla de avena, frutos secos y miel natural.",
+      "categoria": "Desayuno"
+    },
+    {
+      "id": 8,
+      "img": "assets/img/pan_integral.jpg",
+      "nombre": "Pan Integral",
+      "precio": 120,
+      "descripcion": "Hecho con harina de trigo integral 100%.",
+      "categoria": "Panadería"
+    },
+    {
+      "id": 9,
+      "img": "assets/img/avena_integral.jpeg",
+      "nombre": "Leche Almendras",
+      "precio": 250,
+      "descripcion": "Bebida vegetal a base de almendras.",
+      "categoria": "Bebidas"
+    },
+    {
+        "id": 10,
+        "img": "assets/img/avena_integral.jpeg",
+        "nombre": "Miel Natural",
+        "precio": 300,
+        "descripcion": "Miel pura de abejas orgánica.",
+        "categoria": "Endulzantes"
+    },
+    {
+        "id": 11,
+        "img": "assets/img/jugo_naranja.jpg",
+        "nombre": "Jugo de Naranja",
+        "precio": 180,
+        "descripcion": "Jugo 100% natural sin azúcar añadida.",
+        "categoria": "Bebidas"
+    },
+    {
+        "id": 12,
+        "img": "assets/img/avena_integral.jpeg",
+        "nombre": "Avena Integral",
+        "precio": 200,
+        "descripcion": "Avena sin procesar, ideal para desayunos.",
+        "categoria": "Cereales"
     }
+
+    
+    
   ]
   

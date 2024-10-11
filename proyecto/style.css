@@ -98,6 +98,33 @@ nav ul li a:hover{
     text-decoration-color: orange;
 }
 
+/*paginacion*/
+.paginacion{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.pagination-navegadores{
+    display: flex;
+    gap: 10px;
+    padding: 0;
+}
+
+.pagination-navegadores .paginacion-nav a{
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: #f57c00; 
+    color: white; 
+    border-radius: 4px;
+    transition: background-color 0.3s ease; 
+}
+
+.pagination-navegadores .paginacion-nav a:hover{
+    background-color: #ff9800;
+}
+
 
 /* footer */
 
