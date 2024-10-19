@@ -2,6 +2,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 /* header */
@@ -20,7 +22,7 @@ nav{
 }
 
 nav .logo p{
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bolder;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -50,9 +52,9 @@ nav ul li{
 
 nav ul li a{
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     padding: 8px 16px;
-    font-weight: 500;
+    font-weight: bolder;
 }
 
 nav ul li a:hover{
@@ -124,6 +126,8 @@ nav ul li a:hover{
 .pagination-navegadores .paginacion-nav a:hover{
     background-color: #ff9800;
 }
+
+
 
 
 /* footer */
