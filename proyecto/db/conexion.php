@@ -5,6 +5,6 @@ try {
 
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo 'Ha surgido un error por favor intente más tarde';
+    header('Location: error.php');
     exit;
 }

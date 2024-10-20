@@ -1,3 +1,58 @@
+<?php
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripcslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+$nombre = test_input($_POST['nombre'] ?? null);
+$email = filter_var($_POST['email'] ?? null, FILTER_VALIDATE_EMAIL);
+$telefono = test_input($_POST['telefono'] ?? null);
+$servicio = test_input($_POST['servicio'] ?? null);
+$comentarios = test_input($_POST['comentarios'] ?? null);
+
+
+$errores = [];
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (empty($nombre)) {
+        $errores[] = "El nombre es obligatorio";
+    }
+
+
+    if (empty($email)) {
+        $errores[] = "El Gmail es obligatorio";
+    }
+
+
+    if (empty($telefono)) {
+        $errores[] = "El telefono es obligatorio";
+    }
+
+
+    if (empty($servicio)) {
+        $errores[] = "El servicio es obligatorio";
+    }
+
+    if (empty($comentarios)) {
+        $errores[] = "Los comentarios es obligatorio";
+    }
+
+
+
+
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,7 +71,7 @@
     <!-- header -->
     <?php include "includes/header.php" ?>
 
-    
+
 
     <main>
 
@@ -37,21 +92,21 @@
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre"
-                                required>
+                                >
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email:</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Tu Email"
-                                required>
+                                >
                         </div>
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Numero de telefono:</label>
                             <input type="number" class="form-control" id="telefono" name="telefono"
-                                placeholder="Tu numero" required>
+                                placeholder="Tu numero" >
                         </div>
                         <div class="mb-3">
                             <label for="servicio" class="form-label">Servicio de Interés:</label>
-                            <select class="form-control" id="servicio" name="servicio" required>
+                            <select class="form-control" id="servicio" name="servicio" >
                                 <option value="">Seleccione un servicio</option>
                                 <option value="consultoria">Consultoría Nutricional</option>
                                 <option value="productos">Productos Orgánicos</option>
@@ -63,13 +118,24 @@
                         <div class="mb-3">
                             <label for="comentarios" class="form-label">Comentarios:</label>
                             <textarea class="form-control" id="comentarios" rows="3" name="comentarios"
-                                placeholder="Dejenos tu comentario" required></textarea>
+                                placeholder="Dejenos tu comentario" ></textarea>
                         </div>
 
 
-                        <div class="alert alert-success" role="alert">
-                            <p>Recibiras un correo de confirmacion.</p>
-                        </div>
+                        <?php if ($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
+                            <div class="mb-3">
+                                <?php
+
+                                if (empty($errores)) {
+                                    echo "<div class='alert alert-success'>Gracias por contactarnos. Te responderemos pronto.</div>";
+                                } else {
+                                    foreach ($errores as $error) {
+                                        echo "<div class='alert alert-danger'>$error</div>";
+                                    }
+                                }
+                                ?>
+                            </div>
+                        <?php endif; ?>
 
                         <button type="submit" class="btn btn-success fs-5 mb-4">Enviar</button>
 
