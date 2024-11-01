@@ -44,7 +44,7 @@ $productosPagina = array_slice($productos, $inicio, $productosMostrados);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <title>Nutrifoods</title>
 </head>
@@ -52,7 +52,7 @@ $productosPagina = array_slice($productos, $inicio, $productosMostrados);
 <body>
 
     <!-- header -->
-    <?php include "includes/header.php" ?>
+    <?php include "layout/header.php" ?>
 
     <main>
 
@@ -91,7 +91,7 @@ $productosPagina = array_slice($productos, $inicio, $productosMostrados);
 
                 <?php foreach ($productosPagina as $prod_saludable): ?>
 
-                    <div class="col-4">
+                    <div class="col-md-4 col-sm-12">
                         <div class="card" style="width: 350px;">
                             <img src=" <?php echo $prod_saludable['img_prod']; ?>  " class="card-img-top" alt="...">
                             <div class="card-body">
@@ -154,7 +154,7 @@ $productosPagina = array_slice($productos, $inicio, $productosMostrados);
 
 
     <!-- footer -->
-    <?php include "includes/footer.php" ?>
+    <?php include "layout/footer.php" ?>
 
 
 

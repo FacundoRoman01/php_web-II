@@ -62,14 +62,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <title>Nutrifoods</title>
 </head>
 
 <body>
 
     <!-- header -->
-    <?php include "includes/header.php" ?>
+    <?php include "layout/header.php" ?>
 
 
 
@@ -79,14 +79,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <section class="container ">
             <div class="row my-5">
-                <div class="col-6 my-3">
+                <div class="col-md-6 col-sm-12 my-3">
                     <!-- mapa -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.097049926098!2d-58.44211033851669!3d-34.60986929055628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5e41da17ff%3A0xebce9fad2698f23f!2sAlmagro%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1728844046379!5m2!1ses!2sar"
                         width="550" height="600" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6 col-sm-12 ">
                     <!-- Formulario -->
                     <form action="#" method="post">
                         <div class="mb-3">
@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </main>
 
     <!-- footer -->
-    <?php include "includes/footer.php" ?>
+    <?php include "layout/footer.php" ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -7,14 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Nutrifoods</title>
 </head>
 
 <body>
 
       <!-- header -->
-    <?php include "includes/header.php" ?>
+    <?php include "layout/header.php" ?>
 
     <main>
         
@@ -23,10 +23,10 @@
 
         <section class="container sobre_nosotros">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6 col-sm-12">
                     <img src="assets/img/nutrifoods_sobreNosotros.jpg" alt="" width="600px">
                 </div>
-                <div class="col-6">
+                <div class="col-md-6 col-sm-12">
                     <h2 class="text-center subtitle">¿Quines somos?</h2>
                     <p class=" p-4 fs-4">
                         NutriFoods es una empresa comprometida con el desarrollo y comercialización de
@@ -50,7 +50,7 @@
                 
 
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-md-4 col-sm-12">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title fs-4 subtitle">Misión</h5>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4 col-sm-12">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title fs-4 subtitle">Visión</h5>
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4 col-sm-12">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title fs-4 subtitle">Valores</h5>
@@ -101,7 +101,7 @@
     </main>
 
        <!-- footer -->
-       <?php include "includes/footer.php" ?>
+       <?php include "layout/footer.php" ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
