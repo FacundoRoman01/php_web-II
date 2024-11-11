@@ -11,10 +11,10 @@
 
     <footer >
         <ul class="footer-links">
-            <li><a href=""><i class="bi bi-instagram"></i></a></li>
-            <li><a href=""><i class="bi bi-facebook"></i></a></li>
-            <li><a href=""><i class="bi bi-twitter"></i></a></li>
-            <li><a href=""><i class="bi bi-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_bank"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/" target="_bank"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/" target="_bank"><i class="bi bi-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/facundoroman/" target="_bank"><i class="bi bi-linkedin"></i></a></li>
         </ul>
         <div class="copy">
             <p>©Facundo Roman(2024)</p>
