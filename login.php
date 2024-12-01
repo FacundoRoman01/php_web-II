@@ -1,5 +1,6 @@
 <?php
-// Aquí podrías manejar la validación del inicio de sesión
+session_start();
+require_once("db/conexion.php");
 require_once("layout/test_input.php");
 
 $email = filter_var($_POST['email'] ?? null, FILTER_VALIDATE_EMAIL);
@@ -18,8 +19,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores[] = "La contraseña es obligatoria";
     }
 
-    // Aquí podrías agregar la validación contra la base de datos para verificar el usuario
-    // Ejemplo: verificar si el email y la contraseña coinciden con los datos almacenados en la base de datos
+    // Si no hay errores, verificar en la base de datos
+    if (empty($errores)) {
+        // Consulta para obtener los datos del usuario usando las columnas correctas de tu base de datos
+        $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE email = :email");
+        $consulta->bindParam(':email', $email);
+        $consulta->execute();
+        $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
+
+        // Si el usuario existe y la contraseña es correcta
+        if ($usuario && password_verify($password, $usuario['password'])) {
+            // Iniciar sesión y guardar datos en la sesión
+            $_SESSION['id'] = $usuario['id'];  // Usando 'id' en lugar de 'id_usuario'
+            $_SESSION['nombre'] = $usuario['nombre'];  // Usando 'nombre' en lugar de 'nombre_usuario'
+            $_SESSION['rol'] = $usuario['rol'];        // Usando 'rol' en lugar de 'rol_usuario'
+
+            // Redirigir al dashboard o página correspondiente
+            header("Location: index.php");
+            exit;
+        } else {
+            // Si la contraseña no es correcta o el usuario no existe
+            $errores[] = "Email o contraseña incorrectos";
+        }
+    }
 }
 ?>
 
@@ -37,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-     <!-- header -->
-     <?php include "layout/header.php" ?>
+    <!-- header -->
+    <?php include "layout/header.php" ?>
 
     <h1 class="text-center">Iniciar sesión</h1>
 
@@ -46,14 +68,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row my-5">
             <div class="col">
                 <!-- Formulario de inicio de sesión -->
-                <form action="#" method="POST">
+                <form action="login.php" method="POST">
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" value="<?= htmlspecialchars($email); ?>">
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="Ingrese su correo electrónico" value="<?= htmlspecialchars($email); ?>">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Ingrese su contraseña">
                     </div>
 
                     <?php if ($_SERVER['REQUEST_METHOD'] == 'POST'): ?>

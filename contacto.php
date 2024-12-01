@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 require_once("layout/test_input.php");
 
 $nombre = test_input($_POST['nombre'] ?? null);

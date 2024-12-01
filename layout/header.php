@@ -1,3 +1,9 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,11 +24,25 @@
             <li><a href="index.php">Inicio</a></li>
             <li><a href="sobre_nosotros.php">Nosotros</a></li>
             <li><a href="contacto.php">Contacto</a></li>
-            <li><a href="registro.php">Registrarse</a></li>
+
+            <?php if (isset($_SESSION['nombre'])): ?>
+                <!-- Si el usuario está logueado, mostrar su nombre y la opción de cerrar sesión -->
+                <li><a href="perfiles_usuarios.php"> <?= htmlspecialchars($_SESSION['nombre']); ?></a></li>
+                <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
+
+                <?php if ($_SESSION['rol'] === 'administrador'): ?>
+                    <!-- Si el usuario es administrador, mostrar la opción para administrar roles -->
+                    <li><a href="administrar_roles.php">Administración</a></li>
+                <?php endif; ?>
+
+            <?php else: ?>
+                <!-- Si el usuario no está logueado, mostrar enlace de login y registro -->
+                <!-- <li><a href="login.php">Iniciar sesión</a></li> -->
+                <li><a href="registro.php">Registrarse</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>
 
-    
 </body>
 </html>
