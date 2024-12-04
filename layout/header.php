@@ -1,12 +1,12 @@
-<<<<<<< HEAD
+
 <?php
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 ?>
 
-=======
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,7 +27,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <li><a href="index.php">Inicio</a></li>
             <li><a href="sobre_nosotros.php">Nosotros</a></li>
             <li><a href="contacto.php">Contacto</a></li>
-<<<<<<< HEAD
+
 
             <?php if (isset($_SESSION['nombre'])): ?>
                 <!-- Si el usuario está logueado, mostrar su nombre y la opción de cerrar sesión -->
@@ -44,17 +44,17 @@ if (session_status() == PHP_SESSION_NONE) {
                 <!-- <li><a href="login.php">Iniciar sesión</a></li> -->
                 <li><a href="registro.php">Registrarse</a></li>
             <?php endif; ?>
-=======
+
             
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
         </ul>
     </nav>
 </header>
 
-<<<<<<< HEAD
+
 </body>
 </html>
-=======
+
     
 </body>
 </html>
