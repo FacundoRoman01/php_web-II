@@ -1,17 +1,7 @@
 <?php
 
-<<<<<<< HEAD
 session_start();
 require_once("layout/test_input.php");
-=======
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripcslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
 
 $nombre = test_input($_POST['nombre'] ?? null);
 $email = filter_var($_POST['email'] ?? null, FILTER_VALIDATE_EMAIL);
