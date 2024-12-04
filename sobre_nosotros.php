@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 <?php session_start(); ?>
 
-=======
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,11 +32,11 @@
                     <img src="assets/img/nutrifoods_sobreNosotros.jpg" alt="" width="600px">
                 </div>
                 <div class="col-md-6 col-sm-12">
-<<<<<<< HEAD
+
                     <h2 class="text-center subtitle">¿Quienes somos?</h2>
-=======
+
                     <h2 class="text-center subtitle">¿Quines somos?</h2>
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
                     <p class=" p-4 fs-4">
                         NutriFoods es una empresa comprometida con el desarrollo y comercialización de
                         alimentos saludables y orgánicos. Nuestro enfoque es ofrecer productos naturales, sin aditivos
