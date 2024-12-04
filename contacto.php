@@ -3,7 +3,7 @@
 
 session_start();
 require_once("layout/test_input.php");
-=======
+
 function test_input($data)
 {
     $data = trim($data);
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre"
 
                            value="<?= htmlspecialchars($nombre); ?>"   >
-=======
+
                                 >
 
                         </div>
