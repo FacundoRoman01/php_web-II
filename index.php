@@ -1,8 +1,8 @@
 <?php
 <<<<<<< HEAD
 session_start();
-=======
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
+
 
 $titulo_principal = "Nutrición Consciente";
 
