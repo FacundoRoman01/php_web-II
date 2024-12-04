@@ -1,6 +1,6 @@
 <?php
 
-<<<<<<< HEAD
+
 session_start();
 require_once("layout/test_input.php");
 =======
@@ -11,7 +11,7 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
 
 $nombre = test_input($_POST['nombre'] ?? null);
 $email = filter_var($_POST['email'] ?? null, FILTER_VALIDATE_EMAIL);
@@ -97,30 +97,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre"
-<<<<<<< HEAD
+
                            value="<?= htmlspecialchars($nombre); ?>"   >
 =======
                                 >
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email:</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Tu Email"
-<<<<<<< HEAD
+
                              
                            value="<?= htmlspecialchars($email); ?> "   >
-=======
+
                                 >
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
                         </div>
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Numero de telefono:</label>
-                            <input type="number" class="form-control" id="telefono" name="telefono"
-<<<<<<< HEAD
+
                               value="<?= htmlspecialchars($telefono); ?>"  placeholder="Tu numero"  >
-=======
+
                                 placeholder="Tu numero" >
->>>>>>> c7f3239d6a081034311ce997a40ac45a8cde2691
+
                         </div>
                         <div class="mb-3">
                             <label for="servicio" class="form-label">Servicio de Interés:</label>
