@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once("layout/test_input.php");
 require_once("db/conexion.php");
+require_once("layout/test_input.php");
 
 $nombre = test_input($_POST['nombre'] ?? null);
 $email = filter_var($_POST['email'] ?? null, FILTER_VALIDATE_EMAIL);
@@ -29,13 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores[] = "El rol es obligatorio y debe ser 'usuario' o 'administrador'";
     }
 
-    // Si no hay errores, guardamos en la base de datos
+    // se guardaf en la base de datos si pasa todo el formulario
     if (empty($errores)) {
-        // Encriptar la contraseña antes de guardarla
+        
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        
-        // Preparar la consulta para insertar los datos en la base de datos
         $consulta = $conexion->prepare("INSERT INTO usuarios (nombre, email, password, rol) VALUES (:nombre, :email, :password, :rol)");
         $consulta->bindParam(':nombre', $nombre);
         $consulta->bindParam(':email', $email);
@@ -45,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Ejecutar la consulta
         if ($consulta->execute()) {
-            echo "<div class='alert alert-success'>Registro exitoso. ¡Gracias por registrarte!</div>";
+            echo "<div class='alert alert-success'>Registro exitoso. Gracias por registrarte</div>";
         } else {
             echo "<div class='alert alert-danger'>Hubo un error al registrar los datos. Por favor, intenta de nuevo.</div>";
         }

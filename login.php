@@ -9,19 +9,17 @@ $password = test_input($_POST['password'] ?? null);
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Validación de correo electrónico
     if (empty($email)) {
         $errores[] = "El correo electrónico es obligatorio";
     }
 
-    // Validación de contraseña
     if (empty($password)) {
         $errores[] = "La contraseña es obligatoria";
     }
 
-    // Si no hay errores, verificar en la base de datos
+    // verifica en la base de datos si ya esta registrado
     if (empty($errores)) {
-        // Consulta para obtener los datos del usuario usando las columnas correctas de tu base de datos
+        // obtener los datos
         $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE email = :email");
         $consulta->bindParam(':email', $email);
         $consulta->execute();
@@ -29,16 +27,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Si el usuario existe y la contraseña es correcta
         if ($usuario && password_verify($password, $usuario['password'])) {
-            // Iniciar sesión y guardar datos en la sesión
-            $_SESSION['id'] = $usuario['id'];  // Usando 'id' en lugar de 'id_usuario'
-            $_SESSION['nombre'] = $usuario['nombre'];  // Usando 'nombre' en lugar de 'nombre_usuario'
-            $_SESSION['rol'] = $usuario['rol'];        // Usando 'rol' en lugar de 'rol_usuario'
+            
+            $_SESSION['id'] = $usuario['id'];  
+            $_SESSION['nombre'] = $usuario['nombre'];  
+            $_SESSION['rol'] = $usuario['rol'];        
 
-            // Redirigir al dashboard o página correspondiente
+           
             header("Location: index.php");
             exit;
         } else {
-            // Si la contraseña no es correcta o el usuario no existe
             $errores[] = "Email o contraseña incorrectos";
         }
     }

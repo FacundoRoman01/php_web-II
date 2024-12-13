@@ -2,10 +2,7 @@
 session_start();
 require_once("db/conexion.php");
 
-if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'administrador') {
-    header("Location: login.php");
-    exit;
-}
+require_once("layout/verificacion_admin.php");
 
 $errores = [];
 $exito = "";
@@ -13,14 +10,14 @@ $exito = "";
 // Obtener lista de usuarios
 $consulta = $conexion->prepare("SELECT id, nombre, email, rol FROM usuarios");
 $consulta->execute();
-$usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
+$usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC); //array
 
 // Cambiar rol de usuario
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cambiarRol'])) {
     $usuarioId = $_POST['usuarioId'];
     $nuevoRol = $_POST['nuevoRol'];
 
-    // Validar que no sea el mismo administrador
+    // valida que no sea el mismo administrador
     if ($usuarioId == $_SESSION['id']) {
         $errores[] = "No puedes cambiar tu propio rol.";
     } else {
@@ -52,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cambiarRol'])) {
     <?php include "layout/header.php" ?>
 
     <div class="container mt-5 py-5">
-        <h1 class="text-center">Administrar Roles de Usuario</h1>
+        <h1 class="text-center subtitle">Administración</h1>
 
         <div class="">
             <a href="crud.php">Gestion de productos</a>
@@ -71,14 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cambiarRol'])) {
             </div>
         <?php endif; ?>
 
-        <table class="table table-striped mt-4">
+        <table class="table mt-4">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Email</th>
                     <th>Rol</th>
-                    <th>Acciones</th>
+                    <th>Cambiar Roles</th>
                 </tr>
             </thead>
             <tbody>
@@ -89,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cambiarRol'])) {
                         <td><?= htmlspecialchars($usuario['email']); ?></td>
                         <td><?= htmlspecialchars($usuario['rol']); ?></td>
                         <td>
-                            <!-- Formulario para cambiar rol -->
+                            <!-- Formulario  -->
                             <?php if ($usuario['id'] != $_SESSION['id']): ?>
                                 <form action="administrar_roles.php" method="POST" class="d-inline">
                                     <input type="hidden" name="usuarioId" value="<?= $usuario['id']; ?>">

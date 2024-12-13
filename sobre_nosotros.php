@@ -35,8 +35,6 @@
 
                     <h2 class="text-center subtitle">¿Quienes somos?</h2>
 
-                    <h2 class="text-center subtitle">¿Quines somos?</h2>
-
                     <p class=" p-4 fs-4">
                         NutriFoods es una empresa comprometida con el desarrollo y comercialización de
                         alimentos saludables y orgánicos. Nuestro enfoque es ofrecer productos naturales, sin aditivos

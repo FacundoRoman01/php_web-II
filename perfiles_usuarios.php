@@ -36,16 +36,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
             $consulta = $conexion->prepare("UPDATE usuarios SET nombre = :nombre, email = :email, password = :password WHERE id = :id");
             $consulta->bindParam(':password', $passwordHash);
+            
         } else {
             $consulta = $conexion->prepare("UPDATE usuarios SET nombre = :nombre, email = :email WHERE id = :id");
         }
+
         $consulta->bindParam(':nombre', $nombre);
         $consulta->bindParam(':email', $email);
         $consulta->bindParam(':id', $usuarioId);
 
         if ($consulta->execute()) {
             $exito = "Datos actualizados correctamente.";
-            $_SESSION['nombre'] = $nombre; // Actualizar nombre en la sesión
+            $_SESSION['nombre'] = $nombre;
         } else {
             $errores[] = "Hubo un error al actualizar los datos.";
         }
@@ -66,7 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php include "layout/header.php"; ?>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Modificar Datos</h1>
+        <h1 class="text-center mb-4">Datos de <?=$usuario['nombre']; ?></h1>
+        
 
         <div class="row justify-content-center">
             <div class="col-md-6">

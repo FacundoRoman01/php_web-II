@@ -1,20 +1,9 @@
 <?php
 
 
-session_start();
-require_once("layout/test_input.php");
-
 
 session_start();
-require_once("layout/test_input.php");
-
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripcslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
+require_once("layout/test_input.php"); 
 
 
 
@@ -120,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Numero de telefono:</label>
 
-                              
+                              <!-- telefono obligatorio? -->
 
                         </div>
                         <div class="mb-3">

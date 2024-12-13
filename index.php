@@ -101,7 +101,8 @@ $productosPagina = array_slice($productos, $inicio, $productosMostrados);
                                 <p class="card-text"> <?php echo $prod_saludable['descripcion']; ?> </p>
                                 <p class="card-text"> Precio: <?php echo $prod_saludable['precio']; ?> </p>
                                 <p class="card-text"> <?php echo $prod_saludable['categoria']; ?> </p>
-                                <a href="#" class="btn_style">Ver detalle</a>
+                                <a href="detalles_productos.php?id_productos_saludables=<?php echo $prod_saludable['id_productos_saludables']; ?>" class="btn_style">Ver detalle</a>
+
                             </div>
                         </div>
 

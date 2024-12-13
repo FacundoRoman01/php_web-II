@@ -165,6 +165,7 @@ footer .copy{
 
 @media (max-width: 768px){
     nav{
+        display: flex;
         flex-direction: column;
     }
 
@@ -175,7 +176,7 @@ footer .copy{
 
     nav ul{
         font-size: 12px;
-        align-items: center;
+        align-items: center;    
     }
     
 

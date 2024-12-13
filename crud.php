@@ -1,12 +1,7 @@
 <?php
 session_start();
 require_once("db/conexion.php");
-
-// Verificar si el usuario está autenticado y tiene permisos de administrador
-if (!isset($_SESSION['id']) || $_SESSION['rol'] != 'administrador') {
-    header("Location: login.php");
-    exit;
-}
+require_once("layout/verificacion_admin.php");
 
 // Función para agregar un producto
 if (isset($_POST['agregar'])) {
@@ -77,7 +72,7 @@ $productos = $conexion->query("SELECT * FROM productos_saludables")->fetchAll(PD
     <?php include "layout/header.php"; ?>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Gestión de Productos Saludables</h1>
+        <h1 class="text-center mb-4">Modificar productos saludables</h1>
         
         <!-- Botón para agregar un nuevo producto -->
         <a href="#agregarProductoModal" data-bs-toggle="modal" class="btn btn-success mb-4">Agregar Producto</a>
