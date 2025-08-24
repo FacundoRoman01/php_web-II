@@ -10,7 +10,7 @@ if (!isset($_SESSION['id'])) {
 
 $usuarioId = $_SESSION['id'];
 $errores = [];
-$exito = "";
+$exito = "";    
 
 // Obtener datos actuales del usuario
 $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE id = :id");

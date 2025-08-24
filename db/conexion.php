@@ -7,4 +7,5 @@ try {
 } catch (PDOException $e) {
     header('Location: error.php');
     exit;
+
 }
